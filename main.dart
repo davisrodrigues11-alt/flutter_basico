@@ -1,51 +1,73 @@
-import 'package:app_flutter/login.dart';
+
+import 'package:atividade_api/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(
     MaterialApp(
-      home: inicial(),
+      home: login(),
     ),
   );
 }
 
-// Criando a tela de login
-class inicial extends StatelessWidget{
+class login extends StatelessWidget {
   @override
-  Widget build (BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: Color(0xFF002060),
 
-      // título do APP
-      appBar: AppBar(
-        title: Text(
-          'Tela de Login',
-          style: TextStyle(color: Colors.green),
-        ),
-        backgroundColor: Color(0xFF32145A),
-      ),
+        //backgroundColor: Color(0xFF002060),
 
-      // Conteúdo da página
-      body: Padding(
-        padding: EdgeInsets.all(16),
-        child: Column(
-          children: [
-            // Título da tela do APP
-            Text('Acesso ao sistema',
-            style: TextStyle(fontSize: 24),
+        //titulo do app
+
+        appBar: AppBar(
+          title: Text(
+            'Tela de Login',
+            style: TextStyle(color: Colors.green)
             ),
+          backgroundColor: Color(0xFF32145A),
 
-            SizedBox(height: 24,),
+        ),
 
+        //Conteúdo da página
+        body:Padding(
+          padding: EdgeInsets.all(16),
+          child: Column(
+            children: [
+              // Titulo da tela do app
+                Text('Acesso ao Sistema', 
+                style: TextStyle(fontSize: 24),
+                ),
 
-            // Botão Entrar
+              SizedBox(height: 24,),
+
+              //Campo para o E-mail
+              TextField(
+                decoration: InputDecoration(
+                  labelText: 'E-mail'
+                ),
+              ),
+
+              SizedBox(height: 24,),
+
+              //Campo para a Senha
+              TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  labelText: 'Senha'
+                  
+                ),
+              ),
+
+              SizedBox(height: 24),
+
+                          // Botão Entrar
             ElevatedButton(onPressed: (){
               print('Botão pressionado');
               // Função para navegar para tela Home 
               Navigator.push(
                 context, 
                 MaterialPageRoute(
-                  builder: (context) => login(),
+                  builder: (context) => Principal(),
                 )
               );
             },
@@ -56,9 +78,12 @@ class inicial extends StatelessWidget{
             child: Text('Entrar'),
             ),
 
-          ],
-        ),
-      ),
-    );
+
+              ],
+            ),
+          ),
+
+      );
+    
   }
 }

@@ -1,5 +1,8 @@
-import 'package:app_flutter/login.dart';
-import 'package:app_flutter/trabalho.dart';
+
+import 'package:atividade_api/cep.dart';
+import 'package:atividade_api/cnpj.dart';
+import 'package:atividade_api/gps.dart';
+import 'package:atividade_api/main.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -34,20 +37,10 @@ class Principal extends StatelessWidget {
                 Navigator.pop(context);
               },
             ),
+            
 
                         // Opção Principal
-            ListTile(
-              leading: const Icon(Icons.home),
-              title: const Text('Trabalho'),
-              onTap: () {
-                Navigator.push(
-                context, 
-                MaterialPageRoute(
-                  builder: (context) => Trabalho(),
-                )
-              );
-              },
-            ),
+            
 
             // Opção Logout
             ListTile(
@@ -62,6 +55,45 @@ class Principal extends StatelessWidget {
               );
               },
             ),
+            ListTile(
+              leading: const Icon(Icons.search),
+              title: const Text('CEP'),
+              onTap: () {
+                Navigator.push(
+                context, 
+                MaterialPageRoute(
+                  builder: (context) => Cep(),
+                )
+              );
+              },
+            ),
+             ListTile(
+              leading: const Icon(Icons.business),
+              title: const Text('CNPJ'),
+              onTap: () {
+                Navigator.push(
+                context, 
+                MaterialPageRoute(
+                  builder: (context) => Cnpj(),
+                )
+              );
+              },
+            ),
+             ListTile(
+              leading: const Icon(Icons.gps_fixed),
+              title: const Text('GPS'),
+              onTap: () {
+                Navigator.push(
+                context, 
+                MaterialPageRoute(
+                  builder: (context) => Localizacao(),
+                )
+              );
+              },
+            ),
+
+
+            
           ],
         ),
       ),
@@ -69,7 +101,7 @@ class Principal extends StatelessWidget {
       // Conteúdo da tela
       body: const Center(
         child: Text(
-          'Tela Principal',
+          'Sejam Bem Vindos !',
           style: TextStyle(fontSize: 24),
         ),
       ),
